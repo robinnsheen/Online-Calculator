@@ -1,0 +1,35 @@
+.wrapper {
+    padding: 5rem;
+    margin: auto;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    width: 250px;
+}
+
+.operations-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.operations-container div {
+    height: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.numbers-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.numbers-container div {
+    height: 20px;
+    text-align: center;
+    padding: 10px;
+}
