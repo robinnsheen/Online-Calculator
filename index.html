@@ -5,34 +5,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+  <!-- Calculator -->
   <div class="wrapper">
-    <div class="heade">Calculator</div>
-    <label for="operations">Input</label>
-    <input type="text" id="operations">
-    <div class="grid-container">
+
+    <div class="head-container">
+      <div class="title">Calculator</div>
+      <label for="operations">Input</label>
+      <input type="text" id="operations">
+    </div>
+
+    <div class="calculator-container">
       <div class="operations-container">
-        <div>+</div>
-        <div>-</div>
-        <div>/</div>
-        <div>*</div>
+        <div class="operator" id="addition">+</div>
+        <div class="operator" id="subtraction">-</div>
+        <div class="operator" id="divide">/</div>
+        <div class="operator" id="multiply">*</div>
       </div>
       <div class="numbers-container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
+        <div class="digit">9</div>
+        <div class="digit">8</div>
+        <div class="digit">7</div>
+        <div class="digit">6</div>
+        <div class="digit">5</div>
+        <div class="digit">4</div>
+        <div class="digit">3</div>
+        <div class="digit">2</div>
+        <div class="digit">1</div>
+        <div id="equal">=</div>
+        <div class="digit">0</div>
+        <div id="clear">clear</div>
       </div>
     </div>
   </div>
+  <!-- Calculator -->
+
+  <!-- Scripts -->
   <script src="script.js"></script>
+
 </body>
 </html>
