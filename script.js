@@ -30,6 +30,7 @@ const operations = document.querySelectorAll(".operator");
 let x;
 let y;
 let operator;
+let chain = false;
 
 /** Create clear button. */
 const clear = document.querySelector("#clear");
@@ -39,7 +40,7 @@ function clearValues() {
   x = undefined;
   y = undefined;
   operator = undefined;
-
+  chain = false;
 }
 
 /** Create digit buttons */
@@ -52,21 +53,33 @@ for (let digit of digits) {
 function handleDigitClick(evt) {
   let digitValue = evt.currentTarget.innerText;
   console.log(digitValue);
-  if (x && !operator) {
-    x += digitValue;
+  if (!chain) {
+    if (x && !operator) {
+      x += digitValue;
+    }
+
+    if (!x && !operator)
+    {
+      x = digitValue;
+    }
+
+    if (operator && y) {
+      y += digitValue;
+    }
+
+    if (operator && !y) {
+      y = digitValue;
+    }
   }
 
-  if (!x && !operator)
-  {
-    x = digitValue;
-  }
+  if (chain) {
+    if (operator && y) {
+      y += digitValue;
+    }
 
-  if (operator && y) {
-    y += digitValue;
-  }
-
-  if (operator && !y) {
-    y = digitValue;
+    if (operator && !y) {
+      y = digitValue;
+    }
   }
 
 }
@@ -79,8 +92,18 @@ for (let operation of operations) {
 
 //handle clicking on an operator//
 function handleOperationClick(evt) {
-  operator = evt.currentTarget.innerText;
-  console.log(operator);
+  if (!operator) {
+    operator = evt.currentTarget.innerText;
+    console.log(operator);
+  }
+
+  else if (operator) {
+    chain = true;
+    x = operate();
+    y = null;
+    operator = evt.currentTarget.innerText;
+    console.log(operator);
+  }
 }
 
 
@@ -115,6 +138,8 @@ function multiply() {
 function divide() {
   return x / y;
 }
+
+//combine all stored values to evaluate//
 
 function operate() {
 
